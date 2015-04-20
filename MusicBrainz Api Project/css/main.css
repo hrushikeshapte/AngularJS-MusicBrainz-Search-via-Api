@@ -1,0 +1,70 @@
+
+/* CSS file where all CSS is defined */
+
+.content {
+    min-height: 750px;
+    width: 100%;
+    background-color: peachpuff;
+}
+
+.test {
+    color: red;
+    margin-top: 50px;
+}
+
+.search {
+    width: 800px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.search-results {
+    float: left;
+    margin-top: 50px;
+}
+
+.navigation-btn {
+    margin: 20px;
+}
+
+.image {
+    float: left :
+
+}
+
+.home-img {
+    float: right;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 50px;
+}
+
+.list-group-item {
+    width: 300px;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-right: 0px;
+        padding-left: 0px
+    }
+
+    .list-group-item {
+        width: 100%;
+    }
+
+    .image {
+        float: none;
+    }
+
+    .home-img {
+        margin-bottom: 50px;
+    }
+}
+
+
+
+

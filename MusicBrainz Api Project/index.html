@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- loading necessary scripts in the head -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <script type="text/javascript" src="js/controllers/mainController.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Music Brainz Api App</title>
+</head>
+
+<body>
+
+<!-- Call init function and tell view to transfer control to mainController -->
+<div ng-init="init()" ng-controller="mainController" class="text-center container content" ng-app="musicBrainz">
+    <h1 class="test">MusicBrainz Project</h1>
+    <input type="text" class="search-text"/>
+    <a href="#" ng-click="search.doClick(searchText,newOffset)"> <!-- call search function on click of search button -->
+        <button class="btn-primary">Search</button>
+    </a>
+
+    <div class="search">
+
+        <div class="search-results" ng-show="searchItems">
+            <ul>
+                <!-- populate li based on number of results found -->
+                <li class="list-group-item" ng-repeat="artist in artistsInfo(0,1)"><a href="#"
+                                                                                      ng-click="details(artist)">{{artist.name}}</a>
+                </li>
+            </ul>
+            <a href="#" ng-click="prevBtn.doClick()" ng-show="prev">  <!-- Call prevBtn function on click -->
+                <button class="btn-primary navigation-btn">Previous</button>
+            </a>
+            <a href="#" ng-click="nextBtn.doClick()" ng-show="next">  <!-- Call nextBtn function on click -->
+                <button class="btn-primary navigation-btn">Next</button>
+            </a>
+        </div>
+
+        <!-- Show this div if artist name is clicked and populate it with detailed artist data -->
+        <div ng-show="info" ng-repeat="artist in artistDetails(0,1)" class="list-group-item search-results">
+            <li> Name is {{artist.name}}</li>
+            <li>ID is {{artist.id}}</li>
+            <li>Score is {{artist.score}}</li>
+            <a href="#" ng-click="back()">
+                <button class="btn-primary">Back</button>
+            </a>
+        </div>
+
+        <div class="image">
+            <img src="http:\\localhost\MusicBrainz Api Project\views\images\music.jpg" class="home-img"/>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+
